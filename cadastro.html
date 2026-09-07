@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetShop Amigo Animal - Cadastro</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"
+            ><h1>PetShop Amigo Animal</h1></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir menu de navegação"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="produtos.html">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="acessorios.html">Acessórios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="racoes.html">Rações</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="higiene.html">Higiene e Limpeza</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="servicos.html">Serviços</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="cadastro.html"
+                  >Cadastro</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="agendamento.html">Agendamento</a>
+              </li>
+            </ul>
+          </div>
+          <div id="relogio" aria-live="polite"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="secao">
+        <div class="container">
+          <h2>Cadastro de Cliente e Pet</h2>
+          <p>
+            Preencha os dados abaixo para cadastrar você e seu pet em nosso
+            sistema. Os campos marcados com * são obrigatórios.
+          </p>
+
+          <!-- Formulário único: seção do cliente + seção do pet.
+                     novalidate desativa a bolha padrão do navegador para que
+                     a mensagem de erro personalizada (JS) seja exibida. -->
+          <form id="form-cadastro" novalidate>
+            <!-- Seção: dados do cliente -->
+            <fieldset class="form-secao">
+              <legend>Dados do Cliente</legend>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="nome-cliente" class="form-label"
+                    >Nome completo *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nome-cliente"
+                    name="nome-cliente"
+                    placeholder="Digite seu nome completo"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="cpf" class="form-label">CPF *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cpf"
+                    name="cpf"
+                    placeholder="000.000.000-00"
+                    required
+                    inputmode="numeric"
+                    maxlength="14"
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label d-block">Sexo *</label>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="sexo"
+                      id="sexo-feminino"
+                      value="feminino"
+                      required
+                    />
+                    <label class="form-check-label" for="sexo-feminino"
+                      >Feminino</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="sexo"
+                      id="sexo-masculino"
+                      value="masculino"
+                    />
+                    <label class="form-check-label" for="sexo-masculino"
+                      >Masculino</label
+                    >
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="telefone" class="form-label">Telefone *</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="(51) 99999-0000"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label for="email" class="form-label">E-mail *</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="seuemail@exemplo.com"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-5">
+                  <label for="endereco" class="form-label">Endereço *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="endereco"
+                    name="endereco"
+                    placeholder="Rua, avenida..."
+                    required
+                  />
+                </div>
+
+                <div class="col-md-2">
+                  <label for="numero" class="form-label">Número *</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="numero"
+                    name="numero"
+                    placeholder="Ex: 123"
+                    min="1"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-3">
+                  <label for="cidade" class="form-label">Cidade *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cidade"
+                    name="cidade"
+                    placeholder="Sua cidade"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-2">
+                  <label for="estado" class="form-label">Estado *</label>
+                  <select
+                    class="form-select"
+                    id="estado"
+                    name="estado"
+                    required
+                  >
+                    <option value="" selected disabled>UF</option>
+                    <option value="RS">RS</option>
+                    <option value="SC">SC</option>
+                    <option value="PR">PR</option>
+                    <option value="SP">SP</option>
+                    <option value="RJ">RJ</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Seção: dados do pet -->
+            <fieldset class="form-secao">
+              <legend>Dados do Pet</legend>
+
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="nome-pet" class="form-label">Nome do pet *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nome-pet"
+                    name="nome-pet"
+                    placeholder="Nome do seu pet"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-4">
+                  <label class="form-label d-block">Espécie *</label>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="especie"
+                      id="especie-cachorro"
+                      value="cachorro"
+                      required
+                    />
+                    <label class="form-check-label" for="especie-cachorro"
+                      >Cachorro</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="especie"
+                      id="especie-gato"
+                      value="gato"
+                    />
+                    <label class="form-check-label" for="especie-gato"
+                      >Gato</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="especie"
+                      id="especie-outro"
+                      value="outro"
+                    />
+                    <label class="form-check-label" for="especie-outro"
+                      >Outro</label
+                    >
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="raca" class="form-label">Raça</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="raca"
+                    name="raca"
+                    placeholder="Ex: SRD, Labrador..."
+                  />
+                </div>
+
+                <div class="col-md-3">
+                  <label for="idade-pet" class="form-label"
+                    >Idade do pet (anos) *</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="idade-pet"
+                    name="idade-pet"
+                    min="0"
+                    max="40"
+                    placeholder="Ex: 3"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-3">
+                  <label class="form-label d-block">Sexo do pet</label>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="sexo-pet"
+                      id="sexo-pet-macho"
+                      value="macho"
+                    />
+                    <label class="form-check-label" for="sexo-pet-macho"
+                      >Macho</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="sexo-pet"
+                      id="sexo-pet-femea"
+                      value="femea"
+                    />
+                    <label class="form-check-label" for="sexo-pet-femea"
+                      >Fêmea</label
+                    >
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-check mt-4">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="vacinado"
+                      name="vacinado"
+                    />
+                    <label class="form-check-label" for="vacinado"
+                      >Meu pet está com a vacinação em dia</label
+                    >
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="observacoes" class="form-label"
+                    >Observações</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="observacoes"
+                    name="observacoes"
+                    rows="3"
+                    placeholder="Alergias, comportamento, cuidados especiais..."
+                  ></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-petshop">Cadastrar</button>
+
+            <!-- Mensagem de sucesso/erro, preenchida dinamicamente pelo JavaScript -->
+            <div
+              id="mensagem-cadastro"
+              class="mt-3"
+              role="alert"
+              aria-live="polite"
+            ></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p><strong>PetShop Amigo Animal</strong></p>
+        <p></p>
+        <p>
+          Contato: contato@petshopamigoanimal.com | Telefone: (51) 99999-0000
+        </p>
+        <nav aria-label="Links do rodapé">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="index.html">Início</a></li>
+            <li class="list-inline-item">
+              <a href="produtos.html">Produtos</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="servicos.html">Serviços</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="cadastro.html">Cadastro</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="agendamento.html">Agendamento</a>
+            </li>
+          </ul>
+        </nav>
+        <p class="copyright">
+          &copy; 2026 PetShop Amigo Animal. Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

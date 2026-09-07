@@ -1,0 +1,326 @@
+/* =========================================================
+   PetShop Amigo Animal - Fase 2
+   Estilos principais: cores, tipografia, layout e componentes.
+   Trabalha em conjunto com o Bootstrap (grid e componentes).
+   ========================================================= */
+
+/* ---------- Paleta de cores e tipografia ---------- */
+
+:root {
+  --cor-primaria: #2f6b46;
+  --cor-primaria-escura: #1f4a30;
+  --cor-secundaria: #d9782f;
+  --cor-fundo-claro: #f7f4ef;
+  --cor-texto: #2b2b2b;
+  --fonte-titulo: "Georgia", "Times New Roman", serif;
+  --fonte-texto: "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- Configurações gerais ---------- */
+
+body {
+  font-family: var(--fonte-texto);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo-claro);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte-titulo);
+  color: var(--cor-primaria-escura);
+}
+
+/* ---------- Cabeçalho ---------- */
+
+header.site-header {
+  background-color: var(--cor-primaria);
+  padding: 0.75rem 1rem;
+}
+
+header.site-header h1 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+header.site-header .navbar-nav .nav-link {
+  color: #eef7ef;
+  font-weight: 500;
+}
+
+header.site-header .navbar-nav .nav-link.active,
+header.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ---------- Foco visível para acessibilidade ---------- */
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 2px;
+}
+
+/* ---------- Relógio dinâmico (JavaScript) ---------- */
+
+#relogio {
+  color: #eef7ef;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+/* ---------- Cards de produtos e serviços ---------- */
+
+.card-produto {
+  border: 1px solid #e0d9cc;
+  border-radius: 10px;
+  background-color: #ffffff;
+  height: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card-produto img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-produto .card-title {
+  color: var(--cor-primaria-escura);
+}
+
+.card-produto .preco {
+  font-weight: bold;
+  color: var(--cor-secundaria);
+  font-size: 1.1rem;
+}
+
+.badge-tele-busca-sim {
+  background-color: var(--cor-primaria);
+}
+
+.badge-tele-busca-nao {
+  background-color: #6c757d;
+}
+
+/* ---------- Botões ---------- */
+
+.btn-petshop {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria-escura);
+  color: #ffffff;
+}
+
+.btn-petshop:hover {
+  background-color: var(--cor-primaria-escura);
+  color: #ffffff;
+}
+
+/* ---------- Seções ---------- */
+
+section.secao {
+  padding: 2.5rem 0;
+}
+
+section.secao-clara {
+  background-color: #ffffff;
+}
+
+/* =========================================================
+   CARROSSEL
+   A legenda agora aparece em uma caixa clara e legível,
+   sem a faixa verde transparente sobre toda a imagem.
+   ========================================================= */
+
+#carrossel-destaques {
+  position: relative;
+}
+
+#carrossel-destaques .carousel-caption {
+  /* Caixa clara para separar o texto da fotografia */
+  background-color: rgba(255, 255, 255, 0.96);
+
+  /* Tamanho da caixa */
+  width: fit-content;
+  max-width: 80%;
+
+  /* Centraliza a caixa horizontalmente */
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+
+  /* Posiciona a caixa próxima à parte inferior */
+  bottom: 2.5rem;
+
+  /* Espaçamento interno */
+  padding: 1rem 2rem;
+
+  /* Aparência */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+
+  /* Garante que o texto fique acima da imagem */
+  text-align: center;
+}
+
+/* Título do carrossel */
+
+#carrossel-destaques .carousel-caption h3 {
+  color: var(--cor-primaria-escura);
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  font-weight: bold;
+
+  /* Remove qualquer margem que possa deslocar a legenda */
+  margin: 0 0 0.5rem 0;
+
+  /* Garante boa leitura */
+  text-shadow: none;
+}
+
+/* Texto descritivo do carrossel */
+
+#carrossel-destaques .carousel-caption p {
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  font-weight: 500;
+
+  margin: 0;
+
+  /* Retira sombra do texto */
+  text-shadow: none;
+}
+
+/* Imagens do carrossel */
+
+#carrossel-destaques img {
+  max-height: 380px;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+/* Indicadores do carrossel */
+
+#carrossel-destaques .carousel-indicators {
+  margin-bottom: 0.75rem;
+}
+
+#carrossel-destaques .carousel-indicators button {
+  background-color: var(--cor-primaria-escura);
+}
+
+/* Botões de navegação do carrossel */
+
+#carrossel-destaques .carousel-control-prev-icon,
+#carrossel-destaques .carousel-control-next-icon {
+  background-color: rgba(31, 74, 48, 0.75);
+  border-radius: 50%;
+  padding: 1rem;
+  background-size: 60%;
+}
+
+/* ---------- Formulários (cadastro e agendamento) ---------- */
+
+.form-secao {
+  background-color: #ffffff;
+  border: 1px solid #e0d9cc;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-secao legend {
+  color: var(--cor-primaria-escura);
+  font-family: var(--fonte-titulo);
+}
+
+/* ---------- Mensagens de validação ---------- */
+
+.mensagem-sucesso {
+  color: #1f4a30;
+  background-color: #e3f3e8;
+  border: 1px solid #b8dcc4;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+
+.mensagem-erro {
+  color: #7a1f1f;
+  background-color: #fbe4e4;
+  border: 1px solid #eeb4b4;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+
+/* ---------- Resumo dinâmico do agendamento ---------- */
+
+#resumo-agendamento {
+  background-color: #f2ede2;
+  border: 1px dashed var(--cor-secundaria);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* ---------- Rodapé ---------- */
+
+footer.site-footer {
+  background-color: var(--cor-primaria-escura);
+  color: #eef7ef;
+  padding: 2rem 1rem 1rem;
+}
+
+footer.site-footer a {
+  color: #ffe9c7;
+}
+
+footer.site-footer .copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   O Bootstrap já cuida da maior parte do layout responsivo.
+   Aqui ajustamos especificamente o carrossel para telas
+   menores.
+   ========================================================= */
+
+@media (max-width: 576px) {
+  header.site-header h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  #relogio {
+    text-align: center;
+  }
+
+  #carrossel-destaques img {
+    max-height: 220px;
+  }
+
+  /* Caixa da legenda em celulares */
+  #carrossel-destaques .carousel-caption {
+    max-width: 88%;
+    bottom: 1.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+  }
+
+  #carrossel-destaques .carousel-caption h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  #carrossel-destaques .carousel-caption p {
+    font-size: 0.85rem;
+  }
+}
