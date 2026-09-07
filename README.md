@@ -73,5 +73,5 @@ petshop/
 
 ## Links
 
-- Repositório GitHub: insira aqui o link do repositório
-- Sistema publicado (GitHub Pages): insira aqui o link do sistema publicado
+- Repositório GitHub: (https://github.com/dudavieiraltz/Projeto-Petshop)
+- Sistema publicado (GitHub Pages): https://dudavieiraltz.github.io/Projeto-Petshop/
